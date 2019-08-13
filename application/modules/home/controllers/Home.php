@@ -10,9 +10,9 @@ class Home extends CI_Controller {
 	
 		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
 		if ($this->form_validation->run() == false) {
-			$this->load->view('templetes/header',$data);
+			$this->load->view('../../templetes/header',$data);
 			$this->load->view('home/index',$data);
-			$this->load->view('templetes/footer');
+			$this->load->view('../../templetes/footer');
 		} else {
 			$this->_sendEmail();
 			$data['nama'] = 'Email Terkirim';
@@ -28,7 +28,7 @@ class Home extends CI_Controller {
 			'protocol'  => 'smtp',
 			'smtp_host' => 'ssl://smtp.googlemail.com',
 			'smtp_user' => 'septianferi74@gmail.com',
-			'smtp_pass' => '54msung78952',
+			'smtp_pass' => '',
 			'smtp_port' => 465,
 			'mailtype' => 'html',
 			'charset' => 'utf-8',

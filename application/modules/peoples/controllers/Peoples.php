@@ -35,8 +35,8 @@ class Peoples extends CI_Controller {
 
 		$data['start'] = $this->uri->segment(3);
 		$data['peoples'] = $this->peoples->getPeoples($config['per_page'],$data['start'], $data['keyword']);
-		$this->load->view("templetes/header",$data);
+		$this->load->view("../../templetes/header",$data);
 		$this->load->view("peoples/index",$data);
-		$this->load->view("templetes/footer");
+		$this->load->view("../../templetes/footer");
 	}
 }	

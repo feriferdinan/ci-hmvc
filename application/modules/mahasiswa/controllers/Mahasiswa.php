@@ -17,9 +17,9 @@ class Mahasiswa extends CI_Controller {
 			$data['mahasiswa'] = $this->Mahasiswa_model->cariDataMahasiswa();
 		}
 		$data['judul'] = 'Daftar Mahasiswa';
-		$this->load->view("templetes/header",$data);
+		$this->load->view("../../templetes/header",$data);
 		$this->load->view("index",$data);
-		$this->load->view("templetes/footer");
+		$this->load->view("../../templetes/footer");
 	}
 	public function tambah()
 	{
@@ -29,9 +29,9 @@ class Mahasiswa extends CI_Controller {
 		$this->form_validation->set_rules('nrp','Nrp','required|numeric');
 		$this->form_validation->set_rules('email','Email','required|valid_email');
 		if ($this->form_validation->run() == FALSE ) {
-		$this->load->view("templetes/header",$data);
+		$this->load->view("../../templetes/header",$data);
 		$this->load->view("tambah",$data);
-		$this->load->view("templetes/footer");
+		$this->load->view("../../templetes/footer");
 		} else{
 		$this->Mahasiswa_model->tambahDataMahasiswa();
 		$this->session->set_flashdata('flash','Ditambahkan');
@@ -48,9 +48,9 @@ class Mahasiswa extends CI_Controller {
 	{
 		$data['judul'] = 'Detail Mahasiswa';
 		$data['mahasiswa'] = $this->Mahasiswa_model->getMahasiswaById($id);
-		$this->load->view("templetes/header",$data);
+		$this->load->view("../../templetes/header",$data);
 		$this->load->view("detail",$data);
-		$this->load->view("templetes/footer");
+		$this->load->view("../../templetes/footer");
 	}
 	public function ubah($id)
 	{
@@ -61,9 +61,9 @@ class Mahasiswa extends CI_Controller {
 		$this->form_validation->set_rules('nrp','Nrp','required|numeric');
 		$this->form_validation->set_rules('email','Email','required|valid_email');
 		if ($this->form_validation->run() == FALSE ) {
-		$this->load->view("templetes/header",$data);
+		$this->load->view("../../templetes/header",$data);
 		$this->load->view("ubah",$data);
-		$this->load->view("templetes/footer");
+		$this->load->view("../../templetes/footer");
 		} else{
 		$this->Mahasiswa_model->ubahDataMahasiswa();
 		$this->session->set_flashdata('flash','Diubah');
